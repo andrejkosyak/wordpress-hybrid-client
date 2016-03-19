@@ -1,0 +1,40 @@
+[{
+    "type": "internal",
+    "trans": "menu.home",
+    "route": "public.posts",
+    "icon": "icon ion-home"
+}, {
+    "type": "separator"
+}, {
+    "type": "internal",
+    "trans": "menu.categories",
+    "route": "public.taxonomies({ term: 'category', postType: 'post'})",
+    "icon": "icon ion-folder"
+}, {
+    "type": "internal",
+    "trans": "menu.tags",
+    "route": "public.taxonomies({ term: 'post_tag', postType: 'post' })",
+    "icon": "icon ion-pricetags"
+}, {
+    "type": "separator"
+}, {
+    "type": "internal",
+    "trans": "menu.authors",
+    "route": "public.authors",
+    "icon": "icon ion-ios-people"
+}, {
+    "type": "internal",
+    "trans": "menu.bookmarks",
+    "route": "public.bookmarks",
+    "icon": "icon ion-bookmark"
+}, {
+    "type": "internal",
+    "trans": "params.title",
+    "route": "public.params",
+    "icon": "icon ion-gear-b"
+}, {
+    "type": "internal",
+    "trans": "about.title",
+    "route": "public.pages.id({ id: 189 })",
+    "icon": "icon ion-information"
+}]
