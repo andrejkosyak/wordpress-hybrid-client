@@ -43,6 +43,8 @@
 
 # MENU
 "menu":
+    "externalLinkTarget" : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
+    "externalLinkOptions": null # default: 'location=yes'
     "defaultState":
         "state": "public.posts"
         "params": {}
@@ -147,7 +149,7 @@
 
 # TRANSLATIONS
 "translation":
-    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl","ru"]
+    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl", "ru", "tr"]
     "prefered": "en"
     "available":
         "en":
@@ -170,6 +172,8 @@
             "nl_*": "nl"
         "ru":
             "ru_*": "ru"
+        "tr":
+            "tr_*": "tr"
 
 # ANALYTICS (GOOGLE ANALYTICS)
 "analytics":
@@ -186,7 +190,7 @@
         "defaultTransition" : null
         "defaultBackTransition" : null
     "statubar":
-        "show": false
+        "show": true
         "color": "#455a64"
     "appRate":
         "enabled": false

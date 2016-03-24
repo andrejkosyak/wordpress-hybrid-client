@@ -26,6 +26,8 @@ paramsModule = require './params/index.js'
 menuModule = require './menu/index.js'
 bookmarkModule = require './bookmark/index.js'
 accessibilityModule = require './accessibility/index.js'
+loadingModule = require './loading/index.js'
+pushNotificationsModule = require './pushNotifications/index.js';
 
 # Style entry point
 require './scss/bootstrap'
@@ -51,6 +53,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     menuModule
     bookmarkModule
     accessibilityModule
+    loadingModule
     require('./cordova/cordova.module').name
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
@@ -58,6 +61,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     directivesModule
     templatesModule
     overwriteModule
+    pushNotificationsModule
 ]
 
 app.config ($stateProvider, $urlRouterProvider) ->
@@ -109,6 +113,11 @@ app.config ($WPHCConfig, WpApiProvider, $httpProvider) ->
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
     WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
     $httpProvider.defaults.cache = false
+    $httpProvider.interceptors.push ($log, $q, $injector, $WPHCConfig) ->
+        request: (config) ->
+            if _.startsWith config.url, $WPHCConfig.api.baseUrl
+                config.headers['Accept-Language'] = $injector.get('$WPHCLanguage').getLocale()
+            config || $q.resolve config
 
 ###
 CACHE CONF

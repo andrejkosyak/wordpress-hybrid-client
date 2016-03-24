@@ -1,5 +1,18 @@
 # Configuration
 
+## `config/menu.json`
+
+That's where the menu can get modified.
+
+They are four types of menu item (internal|external|folder|separator).
+
+* ***internal***    Can be any page of the application (home|category|tag|parameters)
+* ***external***    Any www website
+* ***folder***      Create a menu sublevel (you can add up to six levels)
+* ***separator***   Separate menu items
+
+NB: The icons must be from ionicons.com
+
 ## `config/config.scss`
 
 This file allow you to overwrite Sass variables.
@@ -20,7 +33,7 @@ $palette-divider-color: #eaeaea !default;
 
 You can also overwrite Ionic variables: <http://ionicframework.jp/tutorials/customizing-ionic-with-sass/>
 
-To know all WPHC internal varaibles checkout ```lib/scss/_variables.scss```
+To know all WPHC internal variables checkout ```lib/scss/_variables.scss```
 
 ## `config/templates`
 
@@ -67,6 +80,44 @@ WPHC templates are all located in `lib/templates`. These should not be touched. 
 For instance if you want to modify the way the menu is displayed, you will need to copy `lib/templates/directive/menu.html` and past it wherever you want in `config/templates` folder.
 
 After that you will need to register your new template in `lib/templates/index.js` (read the comments for help)
+
+## Frequently asked questions
+
+### How to change the home page
+
+The home page is by default the posts page. This can be changed in the `config/config.cson` file.
+
+Add the following and change state and params to the page you want:
+
+```
+# MENU (Default)
+"menu":
+    "defaultState":
+        "state": "public.posts"
+        "params": {}
+```
+
+#### Set the home page to the pages page:
+
+```
+# MENU
+"menu":
+    "defaultState":
+        "state": "public.pages"
+        "params": {}
+```
+
+#### Set the home page to a specific custom page:
+
+```
+# MENU
+"menu":
+    "defaultState":
+        "state": "public.customPosts"
+        "params": {"slug": "movie"}
+```
+
+Consult the `config/menu.json` to know about the different pages state and params.
 
 ## `config/config.cson`
 
@@ -135,16 +186,6 @@ The media query used to determine when to always display the left menu.
 ```
 "exposeAsideWhen": "(min-width:900px)"
 ```
-
-They are four types of menu item (internal|external|folder|separator).
-
-* ***internal***    Can be any page of the application (home|category|tag|parameters)
-* ***external***    Any www website
-* ***folder***      Create a menu sublevel (you can add up to six levels)
-* ***separator***   Separate menu items
-
-NB: The icons must be from ionicons.com
-NB: For now the homepage is mandatory and cannot be a specific page.
 
 ### Settings configuration.
 

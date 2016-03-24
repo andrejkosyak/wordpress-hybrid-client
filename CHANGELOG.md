@@ -16,9 +16,38 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
-<a name="2.0.0-beta03"></a>
-### 2.0.0-beta03 (2016-01-29)
+<a name="2.0.0-beta07"></a>
+### 2.0.0-beta07 (2016-03-18)
 
+* [BUG] Post title contains decimal <https://github.com/shprink/wordpress-hybrid-client/issues/74>
+* [BUG] how to display category/tag title instead of slug？ <https://github.com/shprink/wordpress-hybrid-client/issues/59>
+* [BUG] SHaring on whatsapp sends extra text as rendered <https://github.com/shprink/wordpress-hybrid-client/issues/181>
+* [FEATURE] External links open in app <https://github.com/shprink/wordpress-hybrid-client/issues/175>
+* Upgrade InAppBrowser cordova plugin
+
+<a name="2.0.0-beta06"></a>
+### 2.0.0-beta06 (2016-02-20)
+
+* [FEATURE] Adding hybrid loading service <https://github.com/shprink/wordpress-hybrid-client/issues/174>
+* [FEATURE] Adding push notification switch (register/unregister) in the params page when enabled <https://github.com/shprink/wordpress-hybrid-client/issues/83>
+* [CONFIG] Change cordova statusbar to show by default (most apps have the statubar displayed).
+
+<a name="2.0.0-beta05"></a>
+### 2.0.0-beta05 (2016-02-16)
+
+* Adding Turkish language <https://github.com/shprink/wordpress-hybrid-client/pull/166>
+* [FEATURE] Adding Accept-Language header <https://github.com/shprink/wordpress-hybrid-client/issues/172>
+
+<a name="2.0.0-beta04"></a>
+### 2.0.0-beta04 (2016-02-09)
+
+* [BUG] Fix cache when several custom post types <https://github.com/shprink/wordpress-hybrid-client/issues/162>
+* [BUG] Displayed languages config does not work <https://github.com/shprink/wordpress-hybrid-client/issues/163>
+
+<a name="2.0.0-beta03"></a>
+### 2.0.0-beta03 (2016-02-02)
+
+* adding Russian translation <https://github.com/shprink/wordpress-hybrid-client/pull/159>
 * Integrate better-rest-api-featured-images <https://github.com/shprink/wordpress-hybrid-client/issues/150>
 
 <a name="2.0.0-beta02"></a>
